@@ -37,6 +37,13 @@ class ProductManagerTest {
 
     @Test
     public void shouldFindByName() {
+        Product[] expected = {four};
+        Product[] actual = manager.searchBy("Nokia");
+        Assertions.assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldFindByNameSmartphone() {
         Product[] expected = {two};
         Product[] actual = manager.searchBy("Текст");
         Assertions.assertArrayEquals(expected, actual);
@@ -55,5 +62,21 @@ class ProductManagerTest {
         Product[] actual = manager.searchBy("Крокодил");
         Assertions.assertArrayEquals(expected, actual);
     }
+
+    @Test
+    public void shouldFindByAuthor() {
+        Product[] expected = {two};
+        Product[] actual = manager.searchBy("Дмитрий");
+        Assertions.assertArrayEquals(expected, actual);
+    }
+
+
+    @Test
+    public void shouldFindByManufacturer() {
+        Product[] expected = {four};
+        Product[] actual = manager.searchBy("Финляндия");
+        Assertions.assertArrayEquals(expected, actual);
+    }
+
 
 }

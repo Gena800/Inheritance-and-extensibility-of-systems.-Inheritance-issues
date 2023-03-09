@@ -21,9 +21,9 @@ public class ProductRepository {
     public void removeById(int id) {
         Product[] tmp = new Product[products.length - 1];
         int copyToIndex = 0;
-        for (Product movie : products) {
-            if (movie.getId() != id) {
-                tmp[copyToIndex] = movie;
+        for (Product product : products) {
+            if (product.getId() != id) {
+                tmp[copyToIndex] = product;
                 copyToIndex++;
             }
 
